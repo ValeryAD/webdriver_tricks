@@ -1,6 +1,8 @@
 package com.github.valeryAD.training.getting_webdriver;
 
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -9,19 +11,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public class DriverInProject {
-  public static void main(String[] args) {
-    System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-    WebDriver driver = new ChromeDriver();
-    driver.get("https://www.google.com/");
+    public static void main(String[] args) {
 
-    System.out.println(driver.getCurrentUrl());
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://google.com");
 
-    try {
-      TimeUnit.SECONDS.sleep(5);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
+        driver.findElement(By.name("q")).sendKeys("I Love Java!");
+        System.out.println(driver.getCurrentUrl());
+
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        driver.quit();
     }
-
-    driver.close();
-  }
 }

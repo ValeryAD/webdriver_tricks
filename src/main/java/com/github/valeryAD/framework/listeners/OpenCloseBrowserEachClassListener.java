@@ -9,7 +9,7 @@ public class OpenCloseBrowserEachClassListener implements IClassListener {
 
   @Override
   public void onBeforeClass(ITestClass testClass) {
-    DriverSingletone.getInstance().get("");
+    DriverSingletone.getInstance().get("https://www.google.com");
   }
 
   @Override

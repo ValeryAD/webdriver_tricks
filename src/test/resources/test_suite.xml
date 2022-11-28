@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" parallel="false" thread-count="4">
+
+    <listeners>
+        <listener class-name="com.github.valeryAD.framework.listeners.AlterSuiteListener"></listener>
+    </listeners>
+
+  <test name="Selenium essential training">
+      <classes>
+          <class name="com.github.valeryAD.seleniumEssentialTraining.chap2.ActionsWithElements"></class>
+      </classes>
+  </test>
+</suite>
